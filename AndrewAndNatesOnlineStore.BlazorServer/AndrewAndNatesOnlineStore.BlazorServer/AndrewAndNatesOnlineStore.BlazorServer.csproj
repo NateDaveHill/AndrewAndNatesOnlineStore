@@ -10,4 +10,8 @@
     <Folder Include="Data\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MudBlazor" Version="6.1.7" />
+  </ItemGroup>
+
 </Project>
