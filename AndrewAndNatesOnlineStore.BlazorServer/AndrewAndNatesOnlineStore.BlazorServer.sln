@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndrewAndNatesOnlineStore.BlazorServer", "AndrewAndNatesOnlineStore.BlazorServer\AndrewAndNatesOnlineStore.BlazorServer.csproj", "{DF51128B-7B8D-495C-B4F0-0A78E3334A72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndrewAndNatesOnlineStore.Domain", "AndrewAndNatesOnlineStore.Domain\AndrewAndNatesOnlineStore.Domain.csproj", "{94A87AC7-1C02-4387-8B58-24F76A16551E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AndrewAndNatesOnlineStore.Domain", "AndrewAndNatesOnlineStore.Domain\AndrewAndNatesOnlineStore.Domain.csproj", "{94A87AC7-1C02-4387-8B58-24F76A16551E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
