@@ -4,20 +4,27 @@
 <MudThemeProvider/>
 <MudDialogProvider/>
 <MudSnackbarProvider/>
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
 
-    <main>
-        <MudAppBar Color="Color.Primary" Fixed="false">
-            <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" />
-            <MudSpacer/>
-            <MudIconButton Icon="@Icons.TwoTone.ShoppingCart" Color="Color.Inherit"></MudIconButton>
-        </MudAppBar>
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@ToggleDrawer"/>
+        <MudSpacer/>
+        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/MudBlazor/MudBlazor" Target="_blank"/>
+    </MudAppBar>
+    <MudDrawer @bind-Open="@open" Elevation="1">
+        <NavMenu/>
+    </MudDrawer>
+    <MudMainContent Class="pt-16 px-16">
+       @Body
+    </MudMainContent>
+</MudLayout>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+@code{
+    bool open;
+
+    void ToggleDrawer()
+    {
+        open = !open;
+    }
+
+}
