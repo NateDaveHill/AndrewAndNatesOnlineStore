@@ -15,7 +15,7 @@ namespace AndrewAndNatesOnlineStore.Domain
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            //base.OnConfiguring(optionsBuilder); STILL HAVE TO SET THIS UP FOR OUR PROJECT
         }
     }
 }
