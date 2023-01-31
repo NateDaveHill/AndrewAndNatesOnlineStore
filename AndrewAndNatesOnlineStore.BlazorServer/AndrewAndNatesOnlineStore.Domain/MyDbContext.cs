@@ -15,7 +15,9 @@ namespace AndrewAndNatesOnlineStore.Domain
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //base.OnConfiguring(optionsBuilder); STILL HAVE TO SET THIS UP FOR OUR PROJECT
+            optionsBuilder.UseSqlServer(
+                "Server = (localdb)\\MSSQLLocalDB; Database =AndrewAndNatesOnlineStore; Trusted_Connection = True;");
+
         }
     }
 }

@@ -5,12 +5,14 @@ using System.Reflection.Metadata;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace AndrewAndNatesOnlineStore.Domain
 {
+    [Keyless]
     public class Shoppingcart
     {
-        public int CartId { get; set; }
-        public List<Product> ProductList { get; set; }
+        public int CustomerId { get; set; }
+        public int ProductId { get; set; }
     }
 }

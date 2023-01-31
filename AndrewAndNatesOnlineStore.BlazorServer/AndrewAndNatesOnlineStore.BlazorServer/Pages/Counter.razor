@@ -1,4 +1,6 @@
 ﻿@page "/counter"
+@using AndrewAndNatesOnlineStore.Domain
+@using System.Linq
 
 <PageTitle>Counter</PageTitle>
 
@@ -14,6 +16,13 @@
     private void IncrementCount()
     {
         currentCount++;
+        using (MyDbContext context = new MyDbContext())
+        {
+            var test = context.Product.Select(x => x).ToList(); //check this out!!!
+
+        }
     }
+
+    
 
 }
