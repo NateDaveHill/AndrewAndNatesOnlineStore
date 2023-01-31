@@ -2,7 +2,7 @@
 
 namespace AndrewAndNatesOnlineStore.Domain
 {
-    public class User
+    public class Customer
     {
         public int CustomerId { get; set; }
         public string Username { get; set; }
