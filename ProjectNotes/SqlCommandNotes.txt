@@ -1,0 +1,52 @@
+CREATE TABLE Shoppingcart(
+	
+	CustomerId INT,
+	ProductId INT,
+	FOREIGN KEY (CustomerId) REFERENCES Customer(CustomerId),
+	FOREIGN KEY (ProductId) REFERENCES Product(ProductId),
+	
+);
+
+CREATE TABLE Product(
+
+	ProductId INT NOT NULL,
+	CategoryId INT,
+	ProductName VARCHAR(255),
+	Price DECIMAL,
+	PRIMARY KEY(ProductId)
+);
+
+CREATE TABLE Customer(
+
+	CustomerId INT NOT NULL,
+	Username VARCHAR(255),
+	LoginPassword VARCHAR(255),
+	Firstname VARCHAR(255),
+	Lastname VARCHAR(255),
+	Birthdate DATETIME,
+	PremiumMember BIT,
+	CustomerJoinDate DATETIME,
+	Shoppingcart VARCHAR(255),
+	PRIMARY KEY(CustomerId)
+);
+
+------------------------
+
+INSERT INTO Product 
+VALUES (2, 'TestProduct2', 10); 
+SELECT * FROM product;
+
+INSERT INTO Customer 
+VALUES ('TestCustomer', 'TestPassword', 'TestFirstName', 'TestLastName', '1997-01-15', 0, '2023-01-15','TestShoppingCart'); 
+
+------------------------
+
+SELECT * FROM Customer;
+SELECT * FROM Product;
+SELECT * FROM ShoppingCart;
+
+SELECT Customer.Username, ProductName
+FROM Customer, Product, Shoppingcart
+WHERE Customer.CustomerId = Shoppingcart.CustomerId;
+
+------------------------

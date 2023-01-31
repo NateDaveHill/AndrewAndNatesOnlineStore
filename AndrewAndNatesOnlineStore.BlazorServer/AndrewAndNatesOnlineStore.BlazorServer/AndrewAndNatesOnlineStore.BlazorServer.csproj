@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="MudBlazor" Version="6.1.7" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
