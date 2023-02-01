@@ -12,7 +12,7 @@ namespace AndrewAndNatesOnlineStore.Domain.Models
         public string LoginPassword { get; set; }
         public DateTime CustomerJoinDate { get; set; }
         public bool PremiumMember { get; set; }
-        public List<Product>? Shopppingcart { get; set; } = new List<Product>();
+        public string Shopppingcart { get; set; }
 
     }
 }
