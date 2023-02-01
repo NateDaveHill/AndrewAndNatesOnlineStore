@@ -5,7 +5,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AndrewAndNatesOnlineStore.Domain
+namespace AndrewAndNatesOnlineStore.Domain.Models
 {
     public class Product
     {

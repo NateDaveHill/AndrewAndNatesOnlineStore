@@ -1,6 +1,6 @@
 ﻿using System.Security.Principal;
 
-namespace AndrewAndNatesOnlineStore.Domain
+namespace AndrewAndNatesOnlineStore.Domain.Models
 {
     public class Customer
     {
@@ -12,7 +12,7 @@ namespace AndrewAndNatesOnlineStore.Domain
         public string LoginPassword { get; set; }
         public DateTime CustomerJoinDate { get; set; }
         public bool PremiumMember { get; set; }
-        public string Shopppingcart { get; set; }
+        public List<Product>? Shopppingcart { get; set; } = new List<Product>();
 
     }
 }

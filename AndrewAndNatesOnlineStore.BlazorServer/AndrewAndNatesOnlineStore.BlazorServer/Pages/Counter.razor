@@ -1,6 +1,9 @@
 ﻿@page "/counter"
+@using AndrewAndNatesOnlineStore.Domain.DataAccess
 @using AndrewAndNatesOnlineStore.Domain
 @using System.Linq
+@using System.Runtime.InteropServices
+@using AndrewAndNatesOnlineStore.Domain.Models
 
 <PageTitle>Counter</PageTitle>
 
@@ -16,13 +19,26 @@
     private void IncrementCount()
     {
         currentCount++;
-        using (MyDbContext context = new MyDbContext())
+        using (var context = new MyDbContext())
         {
-            var test = context.Product.Select(x => x).ToList(); //check this out!!!
+            context.Database.EnsureCreated();
+            context.Customer.Add(new Customer()
+            {
+                Firstname = "TestFirstName",
+                Lastname = "TestLastName",
+                Birthdate = DateTime.Today,
+                Username = "Test123",
+                LoginPassword = "123",
+                CustomerJoinDate = DateTime.Today,
+                PremiumMember = true,
+                Shopppingcart = null
+            });
+            context.SaveChanges();
 
+            var test = context.Customer.Select(x => x).ToList();
         }
     }
 
-    
+
 
 }

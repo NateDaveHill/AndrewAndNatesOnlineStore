@@ -1,3 +1,4 @@
+using AndrewAndNatesOnlineStore.Domain.DataAccess;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor.Services;
@@ -8,6 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddMudServices();
+//builder.Services.AddDbContext<MyDbContext>(options =>
+//    {
+
+//    }
+//    )
 
 var app = builder.Build();
 
