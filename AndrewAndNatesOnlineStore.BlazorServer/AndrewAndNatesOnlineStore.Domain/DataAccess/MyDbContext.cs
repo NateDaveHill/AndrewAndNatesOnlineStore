@@ -17,7 +17,7 @@ namespace AndrewAndNatesOnlineStore.Domain.DataAccess
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AndrewAndNatesOnlineStore;Integrated Security=True;");  
+                "Data Source=(localdb)\\MSSQLLocalDB; Database=AndrewAndNatesOnlineStore;Integrated Security=True;");  
 
             //When I use my CodeFirt Db, ShoppingCart must be a List<Product> and if I use the one I created first, I must use a string for Shoppingcart
 
