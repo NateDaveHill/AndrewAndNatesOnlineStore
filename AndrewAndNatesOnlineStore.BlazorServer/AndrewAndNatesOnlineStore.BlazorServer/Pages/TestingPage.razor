@@ -5,20 +5,28 @@
 @using System.Runtime.InteropServices
 @using AndrewAndNatesOnlineStore.Domain.Models
 
-<PageTitle>TestingPage</PageTitle>
+<PageTitle>Login</PageTitle>
 
 <MudText>Counter</MudText>
 
-<MudText role="status">Current count: @currentCount</MudText>
+<MudTextField T="string" @bind-Value="UserInputName" Label="Username"></MudTextField>
+<MudTextField T="string" @bind-Value="UserInputPassword" Label="Password"></MudTextField>
 
-<MudButton class="btn btn-primary" @onclick="IncrementCount">Click me</MudButton>
+<MudButton class="btn btn-primary" @onclick="TestMethod">Click me</MudButton>
 
 @code {
-    private int currentCount;
 
-    private void IncrementCount()
+    private string UserInputName;
+    private string UserInputPassword;
+
+
+    private void TestMethod()
     {
-        currentCount++;
+
+    }
+
+    private void TestingDbConnection()
+    {
         using (var context = new MyDbContext())
         {
             context.Database.EnsureCreated();
