@@ -1,10 +1,55 @@
 ﻿@page "/"
+@using AndrewAndNatesOnlineStore.Domain.DataAccess
+@using AndrewAndNatesOnlineStore.Domain.Models
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Login</PageTitle>
+
+<MudText>Login</MudText>
+
+<MudTextField T="string" @bind-Value="UserInputName" Label="Username"></MudTextField>
+<MudTextField T="string" @bind-Value="UserInputPassword" Label="Password"></MudTextField>
+
+<MudButton class="btn btn-primary" @onclick="btnEcexuteLogin">Login</MudButton>
+<MudButton class="btn btn-primary" @onclick="btnCancelLogin">Cancel</MudButton>
+
+@code {
+
+    private string UserInputName;
+    private string UserInputPassword;
 
 
-<MudText>Welcome to Andrew and Nates Online Store</MudText>
+    private void btnEcexuteLogin()
+    {
+    }
 
-<MudText>This is for us to practice, learn, grow and become better in SWD.</MudText>
+    private void btnCancelLogin()
+    {
+        UserInputName = null;
+        UserInputPassword = null;
+    }
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    private void TestingDbConnection()
+    {
+        using (var context = new MyDbContext())
+        {
+            context.Database.EnsureCreated();
+            context.Customer.Add(new Customer
+            {
+                Firstname = "TestFirstName",
+                Lastname = "TestLastName",
+                Birthdate = DateTime.Today,
+                Username = "Test123",
+                LoginPassword = "123",
+                CustomerJoinDate = DateTime.Today,
+                PremiumMember = true,
+                Shopppingcart = "Test"
+            });
+            context.SaveChanges();
+
+            var test = context.Customer.Select(x => x).ToList();
+        }
+    }
+
+
+
+}
