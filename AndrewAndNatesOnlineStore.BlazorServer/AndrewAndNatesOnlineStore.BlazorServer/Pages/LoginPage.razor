@@ -1,4 +1,5 @@
-﻿@page "/"
+﻿@layout LoginLayout
+@page "/"
 @using AndrewAndNatesOnlineStore.Domain.DataAccess
 @using AndrewAndNatesOnlineStore.Domain.Models
 
@@ -8,6 +9,7 @@
 
 <MudTextField T="string" @bind-Value="InputUsername" Label="Username"></MudTextField>
 <MudTextField T="string" @bind-Value="InputPassword" Label="Password"></MudTextField>
+
 
 <MudButton class="btn btn-primary" @onclick="btnEcexuteLogin">Login</MudButton>
 <MudButton class="btn btn-primary" @onclick="btnCancelLogin">Cancel</MudButton>
@@ -22,14 +24,15 @@
     {
         using (var context = new MyDbContext())
         {
-            var dbPassowordList = context.Customer.Where(x => x.Username == InputUsername).ToList();
+            var dbPassowordList = context.Customer.Where(x => x.Username == InputUsername && x.LoginPassword == InputPassword).ToList();
 
-            foreach (var entityCustomer in dbPassowordList)
+            if (dbPassowordList.Count == 0)
             {
-                if (entityCustomer.Username == InputUsername && entityCustomer.LoginPassword == InputPassword)
-                {
-                    
-                }
+                InputUsername = "This User does not exist, please create new User.";  // Temporary, I want to add a Pop up for this, but for now I want to get the Login sorted.
+            }
+            else
+            {
+                // use the other Layout for the pages to access all options.
             }
         }
     }

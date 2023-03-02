@@ -19,7 +19,7 @@ namespace AndrewAndNatesOnlineStore.Domain.DataAccess
             optionsBuilder.UseSqlServer(
                 "Data Source=(localdb)\\MSSQLLocalDB; Database=AndrewAndNatesOnlineStore;Integrated Security=True;");  
 
-            //When I use my CodeFirt Db, ShoppingCart must be a List<Product> and if I use the one I created first, I must use a string for Shoppingcart
+            //When I use my CodeFirst Db, ShoppingCart must be a List<Product> and if I use the one I created first, I must use a string for Shoppingcart
 
         }
     }
