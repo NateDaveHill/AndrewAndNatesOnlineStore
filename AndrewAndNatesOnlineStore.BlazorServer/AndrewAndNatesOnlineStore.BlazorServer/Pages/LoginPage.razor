@@ -7,12 +7,21 @@
 
 <MudText>Login</MudText>
 
-<MudTextField T="string" @bind-Value="InputUsername" Label="Username"></MudTextField>
-<MudTextField T="string" @bind-Value="InputPassword" Label="Password"></MudTextField>
+<MudGrid>
+    <MudItem Style="display:flex;" xs="12">
+        <MudTextField T="string" @bind-Value="InputUsername" Label="Username" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+    </MudItem>
+    <MudItem Style="display:flex;" xs="12">
+        <MudTextField T="string" @bind-Value="InputPassword" Label="Password" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+    </MudItem>
+    <MudItem xs="3">
+        <MudButton class="btn btn-primary" @onclick="btnEcexuteLogin">Login</MudButton>
+    </MudItem>
+    <MudItem xs="3">
+        <MudButton class="btn btn-primary" @onclick="btnCancelLogin">Cancel</MudButton>
+    </MudItem>
+</MudGrid>
 
-
-<MudButton class="btn btn-primary" @onclick="btnEcexuteLogin">Login</MudButton>
-<MudButton class="btn btn-primary" @onclick="btnCancelLogin">Cancel</MudButton>
 
 @code {
 
@@ -28,11 +37,7 @@
 
             if (dbPassowordList.Count == 0)
             {
-                InputUsername = "This User does not exist, please create new User.";  // Temporary, I want to add a Pop up for this, but for now I want to get the Login sorted.
-            }
-            else
-            {
-                // use the other Layout for the pages to access all options.
+                InputUsername = "This User does not exist, please create new User."; // Temporary, I want to add a Pop up for this, but for now I want to get the Login sorted.
             }
         }
     }
